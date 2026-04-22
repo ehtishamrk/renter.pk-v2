@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Renter.pk — Pakistan's first comprehensive rental marketplace. Rent properties, vehicles, tools, and fashion in Gujranwala. Trusted, verified, escrow-backed.">
+  <meta name="theme-color" content="#8B2942">
+
+  <title>Renter.pk — Pakistan's Premier Rental Marketplace</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%238B2942'/><text x='50' y='72' font-size='68' text-anchor='middle' fill='%23C9A76C' font-family='serif'>R</text></svg>">
+
+  <!-- Preconnect for speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ================================================
+       PRELOADER
+  ================================================ -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-bg"></div>
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <span>R</span><span>E</span><span>N</span><span>T</span><span>E</span><span>R</span>
+      </div>
+      <div class="preloader-line"></div>
+      <div class="preloader-tagline">Pakistan's Premier Rental Marketplace</div>
+    </div>
+    <div class="preloader-progress">
+      <div class="preloader-progress-bar">
+        <div class="preloader-progress-fill"></div>
+      </div>
+      <div class="preloader-counter">0</div>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div id="loadingSpinner" class="loading-spinner" aria-live="polite">
+    <div class="spinner-circle"></div>
+    <div class="spinner-text">Loading...</div>
+  </div>
+
+  <!-- ================================================
+       NAVIGATION
+  ================================================ -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#" onclick="showPage('home')" class="nav-logo" aria-label="Renter.pk Home">
+        <span class="nav-logo-text">RENTER</span><span class="nav-logo-dot">.</span><span class="nav-logo-pk">pk</span>
+      </a>
+
+      <div class="nav-links" role="menubar">
+        <a href="#" onclick="showPage('property-residential')" role="menuitem">Residential</a>
+        <a href="#" onclick="showPage('property-commercial')" role="menuitem">Commercial</a>
+        <a href="#" onclick="showPage('vehicles')" role="menuitem">Vehicles</a>
+        <a href="#" onclick="showPage('tools')" role="menuitem">Tools & Equipment</a>
+        <a href="#" onclick="showPage('clothes')" role="menuitem">Fashion</a>
+        <a href="#" onclick="showPage('about')" role="menuitem">About</a>
+        <a href="#" onclick="showPage('contact')" role="menuitem">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn-outline btn-sm" onclick="openModal('login')"><span>Login</span></button>
+        <button class="btn-primary btn-sm" onclick="openModal('signup')"><span>Sign Up</span></button>
+        <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       MOBILE MENU
+  ================================================ -->
+  <div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-logo">RENTER.pk</span>
+      <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('property-residential')">Residential</a>
+      <a href="#" onclick="showPage('property-commercial')">Commercial</a>
+      <a href="#" onclick="showPage('vehicles')">Vehicles</a>
+      <a href="#" onclick="showPage('tools')">Tools & Equipment</a>
+      <a href="#" onclick="showPage('clothes')">Fashion</a>
+      <a href="#" onclick="showPage('about')">About</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </div>
+    <div class="mobile-menu-btns">
+      <button class="btn-outline" onclick="openModal('login')"><span>Login</span></button>
+      <button class="btn-primary" onclick="openModal('signup')"><span>Sign Up</span></button>
+    </div>
+  </div>
+
+  <!-- ================================================
+       HOME PAGE
+  ================================================ -->
+  <div class="page active" id="page-home">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-shapes" aria-hidden="true">
+        <div class="shape shape-circle">
+          <div class="shape-circle-inner"></div>
+        </div>
+        <div class="shape shape-square"></div>
+      </div>
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Launching in Gujranwala, Punjab
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-line"><span class="hero-title-word">Rent Anything,</span></span>
+            <span class="hero-title-line"><span class="hero-title-word"><span class="hero-title-highlight">Anytime</span></span></span>
+            <span class="hero-title-line"><span class="hero-title-word">Anywhere</span></span>
+          </h1>
+
+          <p class="hero-description">
+            Pakistan's first trust-backed rental marketplace. Properties, vehicles, tools and fashion — all verified, all secured with escrow.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn-magnetic btn-primary" onclick="showPage('property-residential')">
+              <span>Explore Rentals <i class="fas fa-arrow-right btn-icon"></i></span>
+            </button>
+            <button class="btn-magnetic btn-outline" onclick="openModal('signup')">
+              <span>List Your Item</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-cards-stack">
+            <div class="hero-card hero-card-back-2">
+              <div class="hero-card-image"><i class="fas fa-tshirt"></i></div>
+            </div>
+            <div class="hero-card hero-card-back-1">
+              <div class="hero-card-image"><i class="fas fa-car"></i></div>
+            </div>
+            <div class="hero-card hero-card-main">
+              <div class="hero-card-image"><i class="fas fa-building"></i></div>
+              <div class="hero-card-content">
+                <span class="hero-card-badge">Featured</span>
+                <h3 class="hero-card-title">Prime Commercial Space</h3>
+                <p class="hero-card-location"><i class="fas fa-map-marker-alt"></i> GT Road, Gujranwala</p>
+                <p class="hero-card-price">PKR 45,000 <span>/month</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-float-stat hero-float-stat-1">
+            <h4>500+</h4>
+            <p>Active Listings</p>
+          </div>
+          <div class="hero-float-stat hero-float-stat-2">
+            <h4>100+</h4>
+            <p>Happy Renters</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        <span class="hero-scroll-text">Scroll to Explore</span>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span class="marquee-item">Residential Properties</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Commercial Spaces</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Vehicles</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Tools & Equipment</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Designer Fashion</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Escrow Protected</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">CNIC Verified</span>
+          <span class="marquee-divider"></span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span class="marquee-item">Residential Properties</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Commercial Spaces</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Vehicles</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Tools & Equipment</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Designer Fashion</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">Escrow Protected</span>
+          <span class="marquee-divider"></span>
+          <span class="marquee-item">CNIC Verified</span>
+          <span class="marquee-divider"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories reveal">
+      <div class="section-header">
+        <div class="section-header-content">
+          <span class="section-tag">Categories</span>
+          <h2 class="section-title">What Would You Like <br><span class="section-title-highlight">To Rent?</span></h2>
+        </div>
+        <div class="section-nav">
+          <button class="section-nav-btn" onclick="scrollCategories(-1)" aria-label="Scroll left"><i class="fas fa-arrow-left"></i></button>
+          <button class="section-nav-btn" onclick="scrollCategories(1)" aria-label="Scroll right"><i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="categories-track" id="categoriesTrack">
+        <a href="#" class="category-card" onclick="showPage('property-residential')">
+          <div class="category-card-bg"></div>
+          <div class="category-card-visual"><div class="category-icon-wrapper"><i class="fas fa-home"></i></div></div>
+          <div class="category-card-content">
+            <h3 class="category-card-title">Properties</h3>
+            <p class="category-card-desc">Apartments, houses, rooms, and portions across Gujranwala at the best prices.</p>
+            <div class="category-card-footer">
+              <div class="category-card-count"><strong>100+</strong><span>Available</span></div>
+              <div class="category-card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="category-card" onclick="showPage('vehicles')">
+          <div class="category-card-bg"></div>
+          <div class="category-card-visual"><div class="category-icon-wrapper"><i class="fas fa-car"></i></div></div>
+          <div class="category-card-content">
+            <h3 class="category-card-title">Vehicles</h3>
+            <p class="category-card-desc">Bikes, cars, rickshaws, and vans for every occasion and budget in Gujranwala.</p>
+            <div class="category-card-footer">
+              <div class="category-card-count"><strong>80+</strong><span>Available</span></div>
+              <div class="category-card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="category-card" onclick="showPage('tools')">
+          <div class="category-card-bg"></div>
+          <div class="category-card-visual"><div class="category-icon-wrapper"><i class="fas fa-tools"></i></div></div>
+          <div class="category-card-content">
+            <h3 class="category-card-title">Tools</h3>
+            <p class="category-card-desc">Professional-grade tools for construction, home improvement, events, and more.</p>
+            <div class="category-card-footer">
+              <div class="category-card-count"><strong>60+</strong><span>Available</span></div>
+              <div class="category-card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="category-card" onclick="showPage('clothes')">
+          <div class="category-card-bg"></div>
+          <div class="category-card-visual"><div class="category-icon-wrapper"><i class="fas fa-gem"></i></div></div>
+          <div class="category-card-content">
+            <h3 class="category-card-title">Fashion</h3>
+            <p class="category-card-desc">Designer bridal wear, sherwani, formal suits, and couture for your special moments.</p>
+            <div class="category-card-footer">
+              <div class="category-card-count"><strong>120+</strong><span>Available</span></div>
+              <div class="category-card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="category-card" onclick="showPage('property-management')">
+          <div class="category-card-bg"></div>
+          <div class="category-card-visual"><div class="category-icon-wrapper"><i class="fas fa-concierge-bell"></i></div></div>
+          <div class="category-card-content">
+            <h3 class="category-card-title">Management</h3>
+            <p class="category-card-desc">Full-service property management. We handle tenants, rent collection, and maintenance.</p>
+            <div class="category-card-footer">
+              <div class="category-card-count"><strong>Free</strong><span>Consultation</span></div>
+              <div class="category-card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Listings -->
+    <section class="featured reveal">
+      <div class="featured-container">
+        <div class="section-header" style="margin-bottom:44px;">
+          <div class="section-header-content">
+            <span class="section-tag">Featured</span>
+            <h2 class="section-title">Premium <span class="section-title-highlight">Rentals</span></h2>
+          </div>
+        </div>
+        <div class="featured-tabs">
+          <button class="featured-tab active" onclick="filterListings('all', this)">All</button>
+          <button class="featured-tab" onclick="filterListings('property', this)">Property</button>
+          <button class="featured-tab" onclick="filterListings('vehicle', this)">Vehicles</button>
+          <button class="featured-tab" onclick="filterListings('tool', this)">Tools</button>
+        </div>
+
+        <div class="listings-grid" id="featuredListings">
+          <div class="listing-card" data-category="property">
+            <div class="listing-image">
+              <div class="listing-image-bg"><i class="fas fa-building"></i></div>
+              <span class="listing-badge">Featured</span>
+              <button class="listing-favorite" aria-label="Save listing"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="listing-content">
+              <span class="listing-category">Residential</span>
+              <h3 class="listing-title">3-Bed Apartment — Model Town</h3>
+              <p class="listing-location"><i class="fas fa-map-marker-alt"></i> Model Town, Gujranwala</p>
+              <div class="listing-meta">
+                <span class="listing-meta-item"><i class="fas fa-bed"></i> 3 Beds</span>
+                <span class="listing-meta-item"><i class="fas fa-bath"></i> 2 Baths</span>
+                <span class="listing-meta-item"><i class="fas fa-ruler-combined"></i> 1200 sqft</span>
+              </div>
+              <div class="listing-footer">
+                <span class="listing-price">PKR 35,000 <span>/month</span></span>
+                <button class="listing-btn">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" data-category="property">
+            <div class="listing-image">
+              <div class="listing-image-bg"><i class="fas fa-store"></i></div>
+              <span class="listing-badge">Prime</span>
+              <button class="listing-favorite" aria-label="Save listing"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="listing-content">
+              <span class="listing-category">Commercial</span>
+              <h3 class="listing-title">Shop on GT Road — High Footfall</h3>
+              <p class="listing-location"><i class="fas fa-map-marker-alt"></i> GT Road, Gujranwala</p>
+              <div class="listing-meta">
+                <span class="listing-meta-item"><i class="fas fa-ruler-combined"></i> 600 sqft</span>
+                <span class="listing-meta-item"><i class="fas fa-door-open"></i> Ground Floor</span>
+              </div>
+              <div class="listing-footer">
+                <span class="listing-price">PKR 55,000 <span>/month</span></span>
+                <button class="listing-btn">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" data-category="vehicle">
+            <div class="listing-image">
+              <div class="listing-image-bg"><i class="fas fa-car"></i></div>
+              <span class="listing-badge">Top Rated</span>
+              <button class="listing-favorite" aria-label="Save listing"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="listing-content">
+              <span class="listing-category">4 Wheeler</span>
+              <h3 class="listing-title">Toyota Corolla 2022 — Automatic</h3>
+              <p class="listing-location"><i class="fas fa-map-marker-alt"></i> Satellite Town, Gujranwala</p>
+              <div class="listing-meta">
+                <span class="listing-meta-item"><i class="fas fa-gas-pump"></i> Petrol</span>
+                <span class="listing-meta-item"><i class="fas fa-cog"></i> Auto</span>
+                <span class="listing-meta-item"><i class="fas fa-users"></i> 5 Seats</span>
+              </div>
+              <div class="listing-footer">
+                <span class="listing-price">PKR 6,000 <span>/day</span></span>
+                <button class="listing-btn">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" data-category="vehicle">
+            <div class="listing-image">
+              <div class="listing-image-bg"><i class="fas fa-motorcycle"></i></div>
+              <button class="listing-favorite" aria-label="Save listing"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="listing-content">
+              <span class="listing-category">2 Wheeler</span>
+              <h3 class="listing-title">Honda CD70 — 2023 Model</h3>
+              <p class="listing-location"><i class="fas fa-map-marker-alt"></i> Peoples Colony, Gujranwala</p>
+              <div class="listing-meta">
+                <span class="listing-meta-item"><i class="fas fa-tachometer-alt"></i> 70cc</span>
+                <span class="listing-meta-item"><i class="fas fa-gas-pump"></i> Petrol</span>
+              </div>
+              <div class="listing-footer">
+                <span class="listing-price">PKR 800 <span>/day</span></span>
+                <button class="listing-btn">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" data-category="tool">
+            <div class="listing-image">
+              <div class="listing-image-bg"><i class="fas fa-camera"></i></div>
+              <span class="listing-badge">Popular</span>
+              <button class="listing-favorite" aria-label="Save listing"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="listing-content">
+              <span class="listing-category">Photography</span>
+              <h3 class="listing-title">Canon EOS 90D with Lenses</h3>
+              <p class="listing-location"><i class="fas fa-map-marker-alt"></i> Civil Lines, Gujranwala</p>
+              <div class="listing-meta">
+                <span class="listing-meta-item"><i class="fas fa-camera"></i> 32MP</span>
+                <span class="listing-meta-item"><i class="fas fa-video"></i> 4K Video</span>
+              </div>
+              <div class="listing-footer">
+                <span class="listing-price">PKR 3,500 <span>/day</span></span>
+                <button class="listing-btn">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card" data-category="tool">
+            <div class="listing-image">
+              <div class="listing-image-bg"><i class="fas fa-hammer"></i></div>
+              <button class="listing-favorite" aria-label="Save listing"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="listing-content">
+              <span class="listing-category">Power Tools</span>
+              <h3 class="listing-title">Professional Drill Machine Set</h3>
+              <p class="listing-location"><i class="fas fa-map-marker-alt"></i> Trust Colony, Gujranwala</p>
+              <div class="listing-meta">
+                <span class="listing-meta-item"><i class="fas fa-box"></i> Full Kit</span>
+                <span class="listing-meta-item"><i class="fas fa-check"></i> Warranty</span>
+              </div>
+              <div class="listing-footer">
+                <span class="listing-price">PKR 600 <span>/day</span></span>
+                <button class="listing-btn">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works reveal">
+      <div class="hiw-container">
+        <div class="section-header" style="margin-bottom:72px;">
+          <div class="section-header-content">
+            <span class="section-tag">Process</span>
+            <h2 class="section-title">How It <span class="section-title-highlight">Works</span></h2>
+          </div>
+        </div>
+
+        <div class="hiw-grid">
+          <div class="hiw-line"><div class="hiw-line-progress"></div></div>
+
+          <div class="hiw-step">
+            <div class="hiw-step-number"><span>01</span></div>
+            <div class="hiw-step-icon"><i class="fas fa-search"></i></div>
+            <h3 class="hiw-step-title">Discover</h3>
+            <p class="hiw-step-desc">Browse verified listings in Gujranwala across properties, vehicles, tools and fashion.</p>
+          </div>
+
+          <div class="hiw-step">
+            <div class="hiw-step-number"><span>02</span></div>
+            <div class="hiw-step-icon"><i class="fas fa-hand-pointer"></i></div>
+            <h3 class="hiw-step-title">Book</h3>
+            <p class="hiw-step-desc">Send a booking request. Owner approves within 24 hours. No payment until approved.</p>
+          </div>
+
+          <div class="hiw-step">
+            <div class="hiw-step-number"><span>03</span></div>
+            <div class="hiw-step-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="hiw-step-title">Pay Safely</h3>
+            <p class="hiw-step-desc">Pay via JazzCash or EasyPaisa into escrow. Your money is held safely until handover.</p>
+          </div>
+
+          <div class="hiw-step">
+            <div class="hiw-step-number"><span>04</span></div>
+            <div class="hiw-step-icon"><i class="fas fa-smile"></i></div>
+            <h3 class="hiw-step-title">Enjoy</h3>
+            <p class="hiw-step-desc">Use your rental with complete peace of mind. Owner gets paid only when you confirm receipt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property Management -->
+    <section class="property-mgmt reveal">
+      <div class="pm-content">
+        <span class="section-tag">For Property Owners</span>
+        <h2 class="pm-title">Professional Property <span>Management</span></h2>
+        <p class="pm-desc">Let us handle the complexities of renting out your property while you collect consistent, guaranteed income every month.</p>
+
+        <div class="pm-features">
+          <div class="pm-feature">
+            <div class="pm-feature-icon"><i class="fas fa-user-check"></i></div>
+            <div class="pm-feature-text"><h4>Tenant Screening</h4><p>Comprehensive CNIC & background checks</p></div>
+          </div>
+          <div class="pm-feature">
+            <div class="pm-feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+            <div class="pm-feature-text"><h4>Rent Collection</h4><p>Guaranteed on-time payments</p></div>
+          </div>
+          <div class="pm-feature">
+            <div class="pm-feature-icon"><i class="fas fa-wrench"></i></div>
+            <div class="pm-feature-text"><h4>Maintenance</h4><p>24/7 repair coordination</p></div>
+          </div>
+          <div class="pm-feature">
+            <div class="pm-feature-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="pm-feature-text"><h4>Monthly Reports</h4><p>Detailed financial statements</p></div>
+          </div>
+        </div>
+
+        <div class="pm-cta">
+          <button class="pm-btn pm-btn-primary" onclick="showPage('property-management')">Learn More</button>
+          <button class="pm-btn pm-btn-outline" onclick="showPage('contact')">Contact Us</button>
+        </div>
+      </div>
+
+      <div class="pm-visual">
+        <div class="pm-stats-grid">
+          <div class="pm-stat"><div class="pm-stat-value">50+</div><div class="pm-stat-label">Properties Managed</div></div>
+          <div class="pm-stat"><div class="pm-stat-value">98%</div><div class="pm-stat-label">Occupancy Rate</div></div>
+          <div class="pm-stat"><div class="pm-stat-value">100%</div><div class="pm-stat-label">On-Time Payments</div></div>
+          <div class="pm-stat"><div class="pm-stat-value">4.9</div><div class="pm-stat-label">Owner Rating</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials reveal">
+      <div class="section-header" style="margin-bottom:56px;text-align:center;display:block;">
+        <span class="section-tag" style="margin:0 auto 16px;display:inline-flex;">Testimonials</span>
+        <h2 class="section-title">What Our <span class="section-title-highlight">Users Say</span></h2>
+      </div>
+
+      <div class="testimonials-container">
+        <div class="testimonial-quote-icon">"</div>
+        <p class="testimonial-text">Renter.pk made finding a shop in Gujranwala incredibly easy. The escrow system gave me complete confidence — I only paid once I confirmed everything was as described. This is exactly what Pakistan's rental market needed.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MK</div>
+          <div class="testimonial-info">
+            <h4 class="testimonial-name">Muhammad Kamran</h4>
+            <p class="testimonial-role">Business Owner, Gujranwala</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+      <div class="cta-bg-shape cta-bg-shape-1"></div>
+      <div class="cta-bg-shape cta-bg-shape-2"></div>
+      <div class="cta-container">
+        <h2 class="cta-title">Ready to Start <span>Renting?</span></h2>
+        <p class="cta-desc">Join the Gujranwala community discovering the easiest, safest way to rent in Pakistan.</p>
+        <div class="cta-buttons">
+          <a href="#" class="cta-btn primary" onclick="openModal('signup')"><i class="fas fa-user-plus"></i> Create Free Account</a>
+          <a href="#" class="cta-btn outline" onclick="showPage('about')"><i class="fas fa-info-circle"></i> Learn More</a>
+        </div>
+      </div>
+    </section>
+  </div><!-- /#page-home -->
+
+  <!-- ================================================
+       PROPERTY RESIDENTIAL PAGE
+  ================================================ -->
+  <div class="page" id="page-property-residential">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Rentals</span>
+        <h1 class="page-title">Residential Properties</h1>
+        <p class="page-subtitle">Find your perfect home — apartments, houses, rooms & portions across Gujranwala</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="filter-bar">
+        <select class="filter-select"><option>All Areas</option><option>Model Town</option><option>Satellite Town</option><option>Peoples Colony</option><option>GT Road</option><option>Trust Colony</option><option>Civil Lines</option></select>
+        <select class="filter-select"><option>Property Type</option><option>Apartment</option><option>House</option><option>Room</option><option>Portion</option></select>
+        <select class="filter-select"><option>Price Range</option><option>Under PKR 15K</option><option>PKR 15K – 35K</option><option>PKR 35K – 75K</option><option>Above PKR 75K</option></select>
+        <select class="filter-select"><option>Bedrooms</option><option>1 Bedroom</option><option>2 Bedrooms</option><option>3 Bedrooms</option><option>4+ Bedrooms</option></select>
+      </div>
+      <div class="listings-grid">
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-building"></i></div><span class="listing-badge">Featured</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Apartment</span><h3 class="listing-title">Furnished 3-Bed Apartment — Model Town</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Model Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bed"></i> 3 Beds</span><span class="listing-meta-item"><i class="fas fa-bath"></i> 2 Baths</span><span class="listing-meta-item"><i class="fas fa-ruler-combined"></i> 1200 sqft</span></div><div class="listing-footer"><span class="listing-price">PKR 35,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-home"></i></div><span class="listing-badge">Premium</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">House</span><h3 class="listing-title">5-Marla House with Parking — Satellite Town</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Satellite Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bed"></i> 3 Beds</span><span class="listing-meta-item"><i class="fas fa-bath"></i> 2 Baths</span><span class="listing-meta-item"><i class="fas fa-car"></i> Parking</span></div><div class="listing-footer"><span class="listing-price">PKR 28,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-bed"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Room</span><h3 class="listing-title">Single Room — Near University</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Peoples Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bed"></i> 1 Room</span><span class="listing-meta-item"><i class="fas fa-wifi"></i> WiFi</span></div><div class="listing-footer"><span class="listing-price">PKR 8,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-building"></i></div><span class="listing-badge">New</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Portion</span><h3 class="listing-title">2-Bed Upper Portion — Trust Colony</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Trust Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bed"></i> 2 Beds</span><span class="listing-meta-item"><i class="fas fa-bath"></i> 1 Bath</span></div><div class="listing-footer"><span class="listing-price">PKR 18,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-home"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">House</span><h3 class="listing-title">10-Marla Bungalow — Civil Lines</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Civil Lines, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bed"></i> 5 Beds</span><span class="listing-meta-item"><i class="fas fa-bath"></i> 3 Baths</span><span class="listing-meta-item"><i class="fas fa-car"></i> 2 Cars</span></div><div class="listing-footer"><span class="listing-price">PKR 75,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-building"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Apartment</span><h3 class="listing-title">2-Bed Apartment — GT Road</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> GT Road, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bed"></i> 2 Beds</span><span class="listing-meta-item"><i class="fas fa-bath"></i> 1 Bath</span></div><div class="listing-footer"><span class="listing-price">PKR 22,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       COMMERCIAL PAGE
+  ================================================ -->
+  <div class="page" id="page-property-commercial">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Business</span>
+        <h1 class="page-title">Commercial Spaces</h1>
+        <p class="page-subtitle">Offices, shops, warehouses and event spaces across Gujranwala</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="filter-bar">
+        <select class="filter-select"><option>Space Type</option><option>Office</option><option>Shop</option><option>Warehouse</option><option>Hall</option></select>
+        <select class="filter-select"><option>Price Range</option><option>Under PKR 30K</option><option>PKR 30K – 80K</option><option>Above PKR 80K</option></select>
+        <select class="filter-select"><option>Area</option><option>GT Road</option><option>Model Town</option><option>Civil Lines</option><option>Satellite Town</option></select>
+      </div>
+      <div class="listings-grid">
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-building"></i></div><span class="listing-badge">Prime</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Office</span><h3 class="listing-title">Corporate Office — GT Road Gujranwala</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> GT Road, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler-combined"></i> 1500 sqft</span><span class="listing-meta-item"><i class="fas fa-car"></i> 3 Parking</span></div><div class="listing-footer"><span class="listing-price">PKR 80,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-store"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Shop</span><h3 class="listing-title">Retail Shop — Peoples Colony Chowk</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Peoples Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler-combined"></i> 400 sqft</span><span class="listing-meta-item"><i class="fas fa-door-open"></i> Ground Floor</span></div><div class="listing-footer"><span class="listing-price">PKR 45,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-warehouse"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Warehouse</span><h3 class="listing-title">Industrial Warehouse — Sialkot Road</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Sialkot Road, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler-combined"></i> 8000 sqft</span><span class="listing-meta-item"><i class="fas fa-truck"></i> Loading Bay</span></div><div class="listing-footer"><span class="listing-price">PKR 150,000 <span>/month</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-store-alt"></i></div><span class="listing-badge">Featured</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Event Hall</span><h3 class="listing-title">Banquet Hall — Model Town</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Model Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-users"></i> 400 Capacity</span><span class="listing-meta-item"><i class="fas fa-parking"></i> Parking</span></div><div class="listing-footer"><span class="listing-price">PKR 120,000 <span>/event</span></span><button class="listing-btn">View</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       VEHICLES PAGE
+  ================================================ -->
+  <div class="page" id="page-vehicles">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Transport</span>
+        <h1 class="page-title">Vehicle Rentals</h1>
+        <p class="page-subtitle">From bikes to cars — find your perfect ride in Gujranwala</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="toggle-tabs">
+        <button class="toggle-tab active" onclick="filterVehicles('all', this)">All Vehicles</button>
+        <button class="toggle-tab" onclick="filterVehicles('2-wheeler', this)">2 Wheeler</button>
+        <button class="toggle-tab" onclick="filterVehicles('3-wheeler', this)">3 Wheeler</button>
+        <button class="toggle-tab" onclick="filterVehicles('4-wheeler', this)">4 Wheeler</button>
+      </div>
+      <div class="listings-grid" id="vehiclesGrid">
+        <div class="listing-card" data-type="2-wheeler"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-motorcycle"></i></div><span class="listing-badge">Popular</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Motorcycle</span><h3 class="listing-title">Honda CD70 — 2023 Model</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Peoples Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-tachometer-alt"></i> 70cc</span><span class="listing-meta-item"><i class="fas fa-gas-pump"></i> Petrol</span></div><div class="listing-footer"><span class="listing-price">PKR 800 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="2-wheeler"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-motorcycle"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Motorcycle</span><h3 class="listing-title">Yamaha YBR 125G</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Model Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-tachometer-alt"></i> 125cc</span><span class="listing-meta-item"><i class="fas fa-gas-pump"></i> Petrol</span></div><div class="listing-footer"><span class="listing-price">PKR 1,200 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="3-wheeler"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-shuttle-van"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Rickshaw</span><h3 class="listing-title">Sazgar Auto Rickshaw — CNG</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Satellite Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-users"></i> 3 Seats</span><span class="listing-meta-item"><i class="fas fa-gas-pump"></i> CNG</span></div><div class="listing-footer"><span class="listing-price">PKR 2,000 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="3-wheeler"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-truck-pickup"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Loader</span><h3 class="listing-title">Qingqi Loader Rickshaw</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> GT Road, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-weight-hanging"></i> 500kg</span><span class="listing-meta-item"><i class="fas fa-gas-pump"></i> Petrol</span></div><div class="listing-footer"><span class="listing-price">PKR 2,500 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="4-wheeler"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-car"></i></div><span class="listing-badge">Top Rated</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Sedan</span><h3 class="listing-title">Toyota Corolla 2022 — Automatic</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Satellite Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-cog"></i> Auto</span><span class="listing-meta-item"><i class="fas fa-users"></i> 5 Seats</span></div><div class="listing-footer"><span class="listing-price">PKR 6,000 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="4-wheeler"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-truck-monster"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">SUV</span><h3 class="listing-title">Toyota Fortuner — 2021</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Civil Lines, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-cog"></i> Auto</span><span class="listing-meta-item"><i class="fas fa-users"></i> 7 Seats</span></div><div class="listing-footer"><span class="listing-price">PKR 14,000 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="4-wheeler"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-truck"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Van</span><h3 class="listing-title">Suzuki Carry Van — Commercial</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Trust Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-weight-hanging"></i> 750kg</span><span class="listing-meta-item"><i class="fas fa-gas-pump"></i> Petrol</span></div><div class="listing-footer"><span class="listing-price">PKR 3,500 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       TOOLS PAGE
+  ================================================ -->
+  <div class="page" id="page-tools">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Equipment</span>
+        <h1 class="page-title">Tools & Equipment</h1>
+        <p class="page-subtitle">Professional-grade tools for every project in Gujranwala</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="toggle-tabs">
+        <button class="toggle-tab active" onclick="filterTools('all', this)">All Tools</button>
+        <button class="toggle-tab" onclick="filterTools('power', this)">Power Tools</button>
+        <button class="toggle-tab" onclick="filterTools('garden', this)">Garden</button>
+        <button class="toggle-tab" onclick="filterTools('construction', this)">Construction</button>
+        <button class="toggle-tab" onclick="filterTools('photography', this)">Photography</button>
+      </div>
+      <div class="listings-grid" id="toolsGrid">
+        <div class="listing-card" data-type="power"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-hammer"></i></div><span class="listing-badge">Popular</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Power Tools</span><h3 class="listing-title">Professional Drill Machine Set</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Trust Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-box"></i> Full Kit</span><span class="listing-meta-item"><i class="fas fa-check"></i> Warranty</span></div><div class="listing-footer"><span class="listing-price">PKR 600 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="power"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-cog"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Power Tools</span><h3 class="listing-title">Angle Grinder — Heavy Duty</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Sialkot Road, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bolt"></i> 2000W</span><span class="listing-meta-item"><i class="fas fa-check"></i> Discs Included</span></div><div class="listing-footer"><span class="listing-price">PKR 500 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="garden"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-leaf"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Garden</span><h3 class="listing-title">Electric Lawn Mower</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Model Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-bolt"></i> Electric</span><span class="listing-meta-item"><i class="fas fa-ruler"></i> 18 inch</span></div><div class="listing-footer"><span class="listing-price">PKR 1,200 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="construction"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-hard-hat"></i></div><span class="listing-badge">Heavy Duty</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Construction</span><h3 class="listing-title">Concrete Mixer Machine</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Satellite Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-drum"></i> 350L</span><span class="listing-meta-item"><i class="fas fa-bolt"></i> Electric</span></div><div class="listing-footer"><span class="listing-price">PKR 2,500 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="photography"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-camera"></i></div><span class="listing-badge">Pro Gear</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Photography</span><h3 class="listing-title">Canon EOS 90D with Lenses</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Civil Lines, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-camera"></i> 32MP</span><span class="listing-meta-item"><i class="fas fa-video"></i> 4K Video</span></div><div class="listing-footer"><span class="listing-price">PKR 3,500 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="photography"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-video"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Photography</span><h3 class="listing-title">DJI Ronin-S Gimbal</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Peoples Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-weight-hanging"></i> 3.6kg Load</span><span class="listing-meta-item"><i class="fas fa-battery-full"></i> 12hr Battery</span></div><div class="listing-footer"><span class="listing-price">PKR 2,000 <span>/day</span></span><button class="listing-btn">View</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       FASHION PAGE
+  ================================================ -->
+  <div class="page" id="page-clothes">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Fashion</span>
+        <h1 class="page-title">Designer Fashion</h1>
+        <p class="page-subtitle">Rent luxury bridal wear, sherwani & formal outfits for your special occasions</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="toggle-tabs">
+        <button class="toggle-tab active" onclick="filterClothes('all', this)">All Fashion</button>
+        <button class="toggle-tab" onclick="filterClothes('bridal', this)">Bridal</button>
+        <button class="toggle-tab" onclick="filterClothes('men', this)">Men's Formal</button>
+        <button class="toggle-tab" onclick="filterClothes('women', this)">Women's Formal</button>
+      </div>
+      <div class="listings-grid" id="clothesGrid">
+        <div class="listing-card" data-type="bridal"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-gem"></i></div><span class="listing-badge">Designer</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Bridal</span><h3 class="listing-title">Heavy Embroidered Bridal Lehenga</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Model Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler"></i> Size M</span><span class="listing-meta-item"><i class="fas fa-gem"></i> Heavy Work</span></div><div class="listing-footer"><span class="listing-price">PKR 25,000 <span>/event</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="bridal"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-crown"></i></div><span class="listing-badge">Premium</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Bridal</span><h3 class="listing-title">Walima Gown — Ivory & Gold</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Satellite Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler"></i> Size S-M</span><span class="listing-meta-item"><i class="fas fa-palette"></i> Ivory</span></div><div class="listing-footer"><span class="listing-price">PKR 35,000 <span>/event</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="men"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-user-tie"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Men's Formal</span><h3 class="listing-title">3-Piece Suit — Navy Blue</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Civil Lines, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler"></i> Size 38-44</span><span class="listing-meta-item"><i class="fas fa-tshirt"></i> Slim Fit</span></div><div class="listing-footer"><span class="listing-price">PKR 5,000 <span>/event</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="men"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-vest"></i></div><span class="listing-badge">Traditional</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Men's Formal</span><h3 class="listing-title">Designer Sherwani — Gold Embroidery</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Peoples Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler"></i> Size 40-44</span><span class="listing-meta-item"><i class="fas fa-gem"></i> Embroidered</span></div><div class="listing-footer"><span class="listing-price">PKR 15,000 <span>/event</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="women"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-female"></i></div><span class="listing-badge">Formal</span><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Women's Formal</span><h3 class="listing-title">Embroidered Formal Suit — Emerald</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Trust Colony, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler"></i> Size M-L</span><span class="listing-meta-item"><i class="fas fa-palette"></i> Emerald Green</span></div><div class="listing-footer"><span class="listing-price">PKR 8,000 <span>/event</span></span><button class="listing-btn">View</button></div></div></div>
+        <div class="listing-card" data-type="men"><div class="listing-image"><div class="listing-image-bg"><i class="fas fa-user-tie"></i></div><button class="listing-favorite"><i class="far fa-heart"></i></button></div><div class="listing-content"><span class="listing-category">Men's Formal</span><h3 class="listing-title">Classic Tuxedo with Bow Tie</h3><p class="listing-location"><i class="fas fa-map-marker-alt"></i> Model Town, Gujranwala</p><div class="listing-meta"><span class="listing-meta-item"><i class="fas fa-ruler"></i> Size 38-44</span><span class="listing-meta-item"><i class="fas fa-check"></i> Full Set</span></div><div class="listing-footer"><span class="listing-price">PKR 10,000 <span>/event</span></span><button class="listing-btn">View</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       PROPERTY MANAGEMENT PAGE
+  ================================================ -->
+  <div class="page" id="page-property-management">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Services</span>
+        <h1 class="page-title">Property Management</h1>
+        <p class="page-subtitle">Complete solutions for property owners in Gujranwala</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="about-hero" style="margin-bottom:80px;">
+        <div class="about-hero-content">
+          <h2>Why Choose Our Management?</h2>
+          <p>We take the stress out of property ownership. Our experienced team handles everything from finding quality tenants to handling maintenance requests, ensuring your property generates consistent returns while maintaining its value.</p>
+          <p>With over 50 properties under management in Gujranwala and a 98% occupancy rate, we've proven our ability to maximize your investment.</p>
+        </div>
+        <div class="about-hero-image"><i class="fas fa-building"></i></div>
+      </div>
+
+      <div class="values-grid" style="margin-bottom:80px;">
+        <div class="value-card"><div class="value-icon"><i class="fas fa-user-check"></i></div><h3>Tenant Screening</h3><p>Comprehensive CNIC verification, employment checks, and rental history analysis to find reliable tenants.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-money-bill-wave"></i></div><h3>Rent Collection</h3><p>Automated collection with guaranteed on-time payments deposited directly to your account.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-tools"></i></div><h3>Maintenance</h3><p>24/7 emergency response with a network of vetted contractors for all repair needs.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-chart-line"></i></div><h3>Financial Reports</h3><p>Detailed monthly statements with income, expenses, and property performance metrics.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-search"></i></div><h3>Property Inspections</h3><p>Regular inspections to ensure your property is maintained to the highest standards.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-bullhorn"></i></div><h3>Marketing</h3><p>Professional listing on Renter.pk plus targeted local outreach to fill vacancies fast.</p></div>
+      </div>
+
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;text-align:center;margin-bottom:52px;">Our Pricing Plans</h2>
+
+      <div class="values-grid">
+        <div class="value-card" style="border:2px solid var(--border);">
+          <h3 style="color:var(--wine);margin-bottom:8px;">Basic</h3>
+          <p style="font-size:3rem;font-family:'Bebas Neue',sans-serif;color:var(--text-primary);margin-bottom:20px;line-height:1;">8%<span style="font-size:1rem;font-family:'Space Grotesk',sans-serif;color:var(--text-muted);"> /month</span></p>
+          <ul style="text-align:left;list-style:none;margin-bottom:28px;">
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Tenant Screening</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Rent Collection</li>
+            <li style="padding:10px 0;font-size:0.9rem;color:var(--text-muted);"><i class="fas fa-times" style="margin-right:10px;"></i>Maintenance Coordination</li>
+          </ul>
+          <button class="listing-btn" style="width:100%;" onclick="showPage('contact')">Get Started</button>
+        </div>
+        <div class="value-card" style="border:2px solid var(--wine);position:relative;">
+          <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--wine);color:white;padding:6px 18px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:1px;">MOST POPULAR</span>
+          <h3 style="color:var(--wine);margin-bottom:8px;">Professional</h3>
+          <p style="font-size:3rem;font-family:'Bebas Neue',sans-serif;color:var(--text-primary);margin-bottom:20px;line-height:1;">12%<span style="font-size:1rem;font-family:'Space Grotesk',sans-serif;color:var(--text-muted);"> /month</span></p>
+          <ul style="text-align:left;list-style:none;margin-bottom:28px;">
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Everything in Basic</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Maintenance Coordination</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Property Inspections</li>
+            <li style="padding:10px 0;font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Marketing & Listings</li>
+          </ul>
+          <button class="form-btn" onclick="showPage('contact')"><span>Get Started</span></button>
+        </div>
+        <div class="value-card" style="border:2px solid var(--border);">
+          <h3 style="color:var(--wine);margin-bottom:8px;">Premium</h3>
+          <p style="font-size:3rem;font-family:'Bebas Neue',sans-serif;color:var(--text-primary);margin-bottom:20px;line-height:1;">15%<span style="font-size:1rem;font-family:'Space Grotesk',sans-serif;color:var(--text-muted);"> /month</span></p>
+          <ul style="text-align:left;list-style:none;margin-bottom:28px;">
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Everything in Professional</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Legal Support</li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Eviction Handling</li>
+            <li style="padding:10px 0;font-size:0.9rem;"><i class="fas fa-check" style="color:var(--wine);margin-right:10px;"></i>Dedicated Account Manager</li>
+          </ul>
+          <button class="listing-btn" style="width:100%;" onclick="showPage('contact')">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       ABOUT PAGE
+  ================================================ -->
+  <div class="page" id="page-about">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Our Story</span>
+        <h1 class="page-title">About Renter.pk</h1>
+        <p class="page-subtitle">Changing how Gujranwala rents — one listing at a time</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="about-hero">
+        <div class="about-hero-content">
+          <h1>Building Gujranwala's <span style="color:var(--wine);font-style:italic;">Rental Revolution</span></h1>
+          <p>Founded in 2024, Renter.pk was born from a simple observation: finding quality rentals in Pakistan was unnecessarily difficult, fragmented, and untrustworthy. Whether it was apartments, vehicles, tools, or designer clothes — the process was broken.</p>
+          <p>We set out to fix that. Starting from Gujranwala, Renter.pk is Pakistan's first trust-backed rental marketplace, connecting renters with verified listings — secured by escrow and backed by identity verification.</p>
+        </div>
+        <div class="about-hero-image"><i class="fas fa-rocket"></i></div>
+      </div>
+
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;text-align:center;margin-bottom:52px;">Our Values</h2>
+
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon"><i class="fas fa-shield-alt"></i></div><h3>Trust & Security</h3><p>Every listing is verified, every transaction is escrow-protected, and every user is CNIC-accountable.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-handshake"></i></div><h3>Fair for Both</h3><p>We protect renters from fraud AND owners from non-payment. Both sides win on Renter.pk.</p></div>
+        <div class="value-card"><div class="value-icon"><i class="fas fa-heart"></i></div><h3>Community First</h3><p>We're rooted in Gujranwala. Local community, local focus, local trust — before we scale.</p></div>
+      </div>
+
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;text-align:center;margin:80px 0 52px;">Our Leadership</h2>
+
+      <div class="team-grid">
+        <div class="team-card"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>Ehtisham Rana Khan</h4><p>Founder & CEO</p></div>
+        <div class="team-card"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>Zaighum Rana Khan</h4><p>Co-CEO</p></div>
+        <div class="team-card"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>Moazzam Rana Khan</h4><p>Chief Technology Officer</p></div>
+        <div class="team-card"><div class="team-avatar"><i class="fas fa-user"></i></div><h4>Rana Nouman Ahmad</h4><p>Chief Operating Officer</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       BLOG PAGE
+  ================================================ -->
+  <div class="page" id="page-blog">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Insights</span>
+        <h1 class="page-title">Our Blog</h1>
+        <p class="page-subtitle">Tips, trends, and insights from Pakistan's rental industry</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="blog-grid">
+        <div class="blog-card"><div class="blog-image"><i class="fas fa-home"></i></div><div class="blog-content"><div class="blog-meta"><span class="blog-category">Property</span><span class="blog-date">Apr 2026</span></div><h3 class="blog-title">Best Areas to Rent in Gujranwala 2026</h3><p class="blog-excerpt">Discover the most promising neighborhoods for property rentals in Gujranwala with the best value for money.</p></div></div>
+        <div class="blog-card"><div class="blog-image"><i class="fas fa-car"></i></div><div class="blog-content"><div class="blog-meta"><span class="blog-category">Vehicles</span><span class="blog-date">Apr 2026</span></div><h3 class="blog-title">Why Rent a Car Instead of Buying in Pakistan</h3><p class="blog-excerpt">The economics of car rental vs ownership in Pakistan's current economic climate.</p></div></div>
+        <div class="blog-card"><div class="blog-image"><i class="fas fa-gem"></i></div><div class="blog-content"><div class="blog-meta"><span class="blog-category">Fashion</span><span class="blog-date">Mar 2026</span></div><h3 class="blog-title">Why Rent Designer Wear for Your Wedding</h3><p class="blog-excerpt">Save lakhs on wedding outfits without compromising on style. The smart renter's guide.</p></div></div>
+        <div class="blog-card"><div class="blog-image"><i class="fas fa-shield-alt"></i></div><div class="blog-content"><div class="blog-meta"><span class="blog-category">Safety</span><span class="blog-date">Mar 2026</span></div><h3 class="blog-title">How Escrow Protects Renters in Pakistan</h3><p class="blog-excerpt">Understanding how Renter.pk's escrow system keeps your money safe during every rental transaction.</p></div></div>
+        <div class="blog-card"><div class="blog-image"><i class="fas fa-tools"></i></div><div class="blog-content"><div class="blog-meta"><span class="blog-category">Tools</span><span class="blog-date">Feb 2026</span></div><h3 class="blog-title">Essential Tools to Rent for Home Renovation</h3><p class="blog-excerpt">Which tools to rent instead of buy for your next home improvement project in Gujranwala.</p></div></div>
+        <div class="blog-card"><div class="blog-image"><i class="fas fa-chart-line"></i></div><div class="blog-content"><div class="blog-meta"><span class="blog-category">Market</span><span class="blog-date">Feb 2026</span></div><h3 class="blog-title">Gujranwala Rental Market Trends 2026</h3><p class="blog-excerpt">Analysis of rental trends, pricing changes, and market predictions for Gujranwala's property market.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       CAREERS PAGE
+  ================================================ -->
+  <div class="page" id="page-careers">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Join Us</span>
+        <h1 class="page-title">Careers at Renter.pk</h1>
+        <p class="page-subtitle">Build the future of renting in Pakistan with a passionate team</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="about-hero" style="margin-bottom:64px;">
+        <div class="about-hero-content">
+          <h2>Why Work With Us?</h2>
+          <p>Join a small, passionate team building something meaningful for Pakistan. We're a startup — which means ownership, impact, and growth opportunities that big companies simply can't offer. Your work will directly shape how Pakistan rents.</p>
+          <p>We're remote-friendly, merit-first, and deeply focused on building a product Gujranwala can be proud of.</p>
+        </div>
+        <div class="about-hero-image"><i class="fas fa-users"></i></div>
+      </div>
+
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;margin-bottom:40px;">Open Positions</h2>
+
+      <div class="careers-grid">
+        <div class="career-card"><div class="career-info"><h3>Full Stack Developer (Node.js + React)</h3><div class="career-meta"><span><i class="fas fa-map-marker-alt"></i> Gujranwala / Remote</span><span><i class="fas fa-clock"></i> Full-time</span><span><i class="fas fa-briefcase"></i> Engineering</span></div></div><button class="career-apply">Apply Now</button></div>
+        <div class="career-card"><div class="career-info"><h3>UI/UX Designer</h3><div class="career-meta"><span><i class="fas fa-map-marker-alt"></i> Remote</span><span><i class="fas fa-clock"></i> Full-time</span><span><i class="fas fa-briefcase"></i> Design</span></div></div><button class="career-apply">Apply Now</button></div>
+        <div class="career-card"><div class="career-info"><h3>Social Media & Growth Manager</h3><div class="career-meta"><span><i class="fas fa-map-marker-alt"></i> Gujranwala</span><span><i class="fas fa-clock"></i> Full-time</span><span><i class="fas fa-briefcase"></i> Marketing</span></div></div><button class="career-apply">Apply Now</button></div>
+        <div class="career-card"><div class="career-info"><h3>Field Agent — Listing Verification</h3><div class="career-meta"><span><i class="fas fa-map-marker-alt"></i> Gujranwala</span><span><i class="fas fa-clock"></i> Part-time</span><span><i class="fas fa-briefcase"></i> Operations</span></div></div><button class="career-apply">Apply Now</button></div>
+        <div class="career-card"><div class="career-info"><h3>Customer Support Specialist</h3><div class="career-meta"><span><i class="fas fa-map-marker-alt"></i> Remote</span><span><i class="fas fa-clock"></i> Full-time</span><span><i class="fas fa-briefcase"></i> Support</span></div></div><button class="career-apply">Apply Now</button></div>
+      </div>
+
+      <div style="text-align:center;margin-top:64px;padding:52px;background:var(--bg-secondary);border-radius:28px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.9rem;margin-bottom:12px;">Don't see the right fit?</h3>
+        <p style="color:var(--text-tertiary);margin-bottom:28px;">We're always looking for talented people. Send your resume and let's talk.</p>
+        <a href="mailto:careers@renter.pk" class="btn-primary" style="display:inline-flex;">Send Your Resume <i class="fas fa-arrow-right btn-icon"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       CONTACT PAGE
+  ================================================ -->
+  <div class="page" id="page-contact">
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-tag">Reach Out</span>
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">We're based in Gujranwala and would love to hear from you</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have a question, suggestion, or want to list your property? We're here to help.</p>
+          <div class="contact-details">
+            <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-item-text"><h4>Our Office</h4><p>Ground Zero, CiVil Computer Market<br>Hospital Road, Gujranwala, Punjab</p></div></div>
+            <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-phone"></i></div><div class="contact-item-text"><h4>Phone / WhatsApp</h4><p>+92 305 112 9141</p></div></div>
+            <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-envelope"></i></div><div class="contact-item-text"><h4>Email</h4><p>hello@renter.pk</p></div></div>
+            <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-clock"></i></div><div class="contact-item-text"><h4>Hours</h4><p>Mon – Sat: 9 AM – 8 PM</p></div></div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Send a Message</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Your Name</label><input type="text" class="form-input" placeholder="Your full name" required></div>
+              <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="you@example.com" required></div>
+            </div>
+            <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" class="form-input" placeholder="+92 300 1234567"></div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <select class="form-input" required>
+                <option value="">Select a topic</option>
+                <option>General Inquiry</option>
+                <option>List My Property</option>
+                <option>List My Vehicle</option>
+                <option>Property Management</option>
+                <option>Technical Support</option>
+                <option>Partnership</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="How can we help you?" required></textarea></div>
+            <button type="submit" class="form-btn"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       PRIVACY POLICY PAGE
+  ================================================ -->
+  <div class="page" id="page-privacy">
+    <div class="page-hero"><div class="page-hero-content"><span class="section-tag">Legal</span><h1 class="page-title">Privacy Policy</h1><p class="page-subtitle">How we collect, use, and protect your information</p></div></div>
+    <div class="page-content"><div class="legal-content">
+      <div class="legal-update"><p><strong>Last Updated:</strong> April 2026</p></div>
+      <h2>1. Introduction</h2><p>Renter.pk ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website and services.</p>
+      <h2>2. Information We Collect</h2><h3>Personal Information</h3><p>We may collect: name, email, phone number, postal address, payment information (processed securely), government-issued ID (CNIC) for verification, and profile information.</p>
+      <h3>Automatically Collected Information</h3><p>When you access our services, we collect: device information, IP address, usage data, and cookies.</p>
+      <h2>3. How We Use Your Information</h2><ul><li>To provide and maintain our services</li><li>To process transactions and send related information</li><li>To verify user identity and prevent fraud</li><li>To send notifications (with your consent)</li><li>To improve our services</li><li>To comply with legal obligations</li></ul>
+      <h2>4. Data Security</h2><p>We implement appropriate technical and organizational measures to protect your personal information. CNIC documents are stored encrypted in a private, access-controlled vault. Full rental addresses are hidden until a booking is confirmed and paid.</p>
+      <h2>5. Your Rights</h2><p>You have the right to access, correct, or delete your personal data. Contact us at privacy@renter.pk for any data requests.</p>
+      <h2>6. Contact Us</h2><p><strong>Email:</strong> privacy@renter.pk<br><strong>Address:</strong> Hospital Road, Gujranwala, Punjab, Pakistan</p>
+    </div></div>
+  </div>
+
+  <!-- ================================================
+       TERMS OF USE PAGE
+  ================================================ -->
+  <div class="page" id="page-terms">
+    <div class="page-hero"><div class="page-hero-content"><span class="section-tag">Legal</span><h1 class="page-title">Terms of Use</h1><p class="page-subtitle">The rules governing your use of our platform</p></div></div>
+    <div class="page-content"><div class="legal-content">
+      <div class="legal-update"><p><strong>Last Updated:</strong> April 2026</p></div>
+      <h2>1. Acceptance of Terms</h2><p>By accessing or using Renter.pk, you agree to be bound by these Terms of Use. If you do not agree, please do not use our services.</p>
+      <h2>2. Eligibility</h2><p>You must be at least 18 years old and a Pakistani resident to use our services. By using Renter.pk, you confirm you have the legal capacity to enter into binding contracts.</p>
+      <h2>3. Account Registration</h2><p>You agree to provide accurate information, maintain account security, notify us immediately of unauthorized access, and be responsible for all activities under your account.</p>
+      <h2>4. User Conduct</h2><p>You agree not to: post false or misleading listings, violate applicable laws, harass other users, attempt to circumvent security measures, or use our platform for illegal purposes.</p>
+      <h2>5. Escrow & Payments</h2><p>All payments for bookings are processed through our escrow system. Platform fees of 5–10% apply to completed rentals. All fees are displayed before you confirm any transaction.</p>
+      <h2>6. Limitation of Liability</h2><p>Renter.pk is provided "as is." We are not liable for indirect or consequential damages arising from your use of our services.</p>
+      <h2>7. Governing Law</h2><p>These terms are governed by the laws of Pakistan. Disputes shall be resolved in the courts of Gujranwala, Pakistan.</p>
+      <h2>8. Contact</h2><p>For questions: <strong>legal@renter.pk</strong></p>
+    </div></div>
+  </div>
+
+  <!-- ================================================
+       COOKIES PAGE
+  ================================================ -->
+  <div class="page" id="page-cookies">
+    <div class="page-hero"><div class="page-hero-content"><span class="section-tag">Legal</span><h1 class="page-title">Cookies Policy</h1><p class="page-subtitle">How we use cookies and similar technologies</p></div></div>
+    <div class="page-content"><div class="legal-content">
+      <div class="legal-update"><p><strong>Last Updated:</strong> April 2026</p></div>
+      <h2>1. What Are Cookies?</h2><p>Cookies are small text files stored on your device when you visit our website. They help us provide a better experience by remembering your preferences.</p>
+      <h2>2. Types of Cookies</h2><h3>Essential Cookies</h3><p>Required for the website to function — page navigation, session management, and security.</p><h3>Performance Cookies</h3><p>Help us understand how visitors use our site so we can improve performance.</p><h3>Functionality Cookies</h3><p>Remember your preferences such as language, location, and login status.</p>
+      <h2>3. Managing Cookies</h2><p>You can control cookies through your browser settings or our cookie consent banner. Note that disabling essential cookies may impact website functionality.</p>
+      <h2>4. Contact</h2><p>Questions? <strong>privacy@renter.pk</strong></p>
+    </div></div>
+  </div>
+
+  <!-- ================================================
+       DISCLAIMER PAGE
+  ================================================ -->
+  <div class="page" id="page-disclaimer">
+    <div class="page-hero"><div class="page-hero-content"><span class="section-tag">Legal</span><h1 class="page-title">Disclaimer</h1><p class="page-subtitle">Important information about our services</p></div></div>
+    <div class="page-content"><div class="legal-content">
+      <div class="legal-update"><p><strong>Last Updated:</strong> April 2026</p></div>
+      <h2>1. Platform Role</h2><p>Renter.pk operates as a marketplace connecting renters with listing owners. We are not a party to rental agreements and do not own, manage, or control items listed on our platform.</p>
+      <h2>2. User Responsibility</h2><p>Users are responsible for: verifying listing accuracy, conducting due diligence, complying with local laws, obtaining appropriate insurance, and resolving disputes directly.</p>
+      <h2>3. No Professional Advice</h2><p>Content on our platform does not constitute legal, financial, or professional advice. Always seek appropriate professional counsel.</p>
+      <h2>4. Limitation of Liability</h2><p>To the maximum extent permitted by law, Renter.pk shall not be liable for losses arising from use of our platform, transactions between users, or inaccurate listings.</p>
+    </div></div>
+  </div>
+
+  <!-- ================================================
+       FAQ PAGE
+  ================================================ -->
+  <div class="page" id="page-faq">
+    <div class="page-hero"><div class="page-hero-content"><span class="section-tag">Support</span><h1 class="page-title">Help Center</h1><p class="page-subtitle">Frequently asked questions about Renter.pk</p></div></div>
+    <div class="page-content">
+      <div class="faq-container">
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>How do I create an account?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>Click "Sign Up", enter your email and phone number, create a password, and verify your phone via OTP. The process takes under 2 minutes.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>How does the escrow system protect me?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>When you pay for a booking, your money is held securely by Renter.pk — not released to the owner until you confirm you've received the item or property. This protects you from fraud. Similarly, the owner's deposit is protected until the rental ends.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>How do I list my item for rent?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>After creating and verifying your account, click "List Your Item". Follow the step-by-step form — category, title, description, photos (up to 10 images), pricing, and availability. Our team reviews listings within 24 hours before they go live.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>What payment methods are accepted?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>We accept JazzCash, EasyPaisa, and bank transfer. All payments are processed securely into our escrow account. Card payments will be added soon.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>Is CNIC verification required?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>Phone verification is required for all users. CNIC verification is required to create listings or book rentals above PKR 50,000/month. It builds trust for both renters and owners and gives you a verified badge on your profile.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>What if something is damaged during the rental?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>Both parties should document the item's condition with photos before and after the rental. Owners can require a security deposit held in escrow. If damage occurs, a dispute can be raised and our team will mediate. The deposit is held for 48 hours after rental completion before release.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>Can I cancel a booking?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>Yes. Cancellation policies vary by listing — most offer free cancellation up to 24–48 hours before the rental period starts. Our platform fee may be non-refundable. Check the specific listing's cancellation policy before booking.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>What are the platform fees?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>Browsing and creating an account is completely free. We charge a 5–10% service fee on successful rental transactions. All fees are clearly shown before you confirm any booking. No hidden charges.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>How do I contact customer support?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>Contact us via the Contact page, email hello@renter.pk, or WhatsApp +92 305 112 9141. Support hours are Monday to Saturday, 9 AM to 8 PM. We aim to respond within 2 hours during business hours.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span>Is Renter.pk only available in Gujranwala?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-content"><p>Yes — we are starting exclusively in Gujranwala to ensure a high-quality, hyper-local experience. We plan to expand to Lahore, Faisalabad and other cities once we have strong traction in Gujranwala. Quality over scale.</p></div></div></div>
+      </div>
+
+      <div style="text-align:center;margin-top:64px;padding:52px;background:var(--bg-secondary);border-radius:28px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.9rem;margin-bottom:12px;">Still have questions?</h3>
+        <p style="color:var(--text-tertiary);margin-bottom:28px;">Our team is here to help. Get in touch and we'll respond within 2 hours.</p>
+        <a href="#" class="btn-primary" style="display:inline-flex;" onclick="showPage('contact')">Contact Support <i class="fas fa-arrow-right btn-icon"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       FOOTER
+  ================================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">Renter<span>.pk</span></span>
+          <p class="footer-desc">Pakistan's first trust-backed rental marketplace. Properties, vehicles, tools and fashion — verified, escrow-secured, Gujranwala-first.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Rentals</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('property-residential')">Residential</a></li>
+            <li><a href="#" onclick="showPage('property-commercial')">Commercial</a></li>
+            <li><a href="#" onclick="showPage('vehicles')">Vehicles</a></li>
+            <li><a href="#" onclick="showPage('tools')">Tools</a></li>
+            <li><a href="#" onclick="showPage('clothes')">Fashion</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('about')">About Us</a></li>
+            <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+            <li><a href="#" onclick="showPage('careers')">Careers</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('property-management')">Property Management</a></li>
+            <li><a href="#" onclick="openModal('signup')">List Your Item</a></li>
+            <li><a href="#" onclick="showPage('faq')">Help Center</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+            <li><a href="#" onclick="showPage('terms')">Terms of Use</a></li>
+            <li><a href="#" onclick="showPage('cookies')">Cookies Policy</a></li>
+            <li><a href="#" onclick="showPage('disclaimer')">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Renter.pk. All rights reserved.</p>
+        <p class="footer-project">A Project of <span>ABCD Ventures</span></p>
+        <div class="footer-legal">
+          <a href="#" onclick="showPage('privacy')">Privacy</a>
+          <a href="#" onclick="showPage('terms')">Terms</a>
+          <a href="#" onclick="showPage('cookies')">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================
+       LOGIN MODAL
+  ================================================ -->
+  <div id="loginModal" class="modal-overlay" role="dialog" aria-labelledby="loginTitle" aria-modal="true">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('login')" aria-label="Close"><i class="fas fa-times"></i></button>
+      <h2 class="modal-title" id="loginTitle">Welcome Back</h2>
+      <p class="modal-subtitle">Login to access your account</p>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="you@example.com" required></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" placeholder="Your password" required></div>
+        <div class="form-checkbox"><input type="checkbox" id="remember"><label for="remember">Remember me</label></div>
+        <button type="submit" class="form-btn"><span>Login</span><i class="fas fa-arrow-right"></i></button>
+        <p class="modal-footer-text">Don't have an account? <a href="#" onclick="switchModal('login','signup')">Sign up</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================================================
+       SIGNUP MODAL
+  ================================================ -->
+  <div id="signupModal" class="modal-overlay" role="dialog" aria-labelledby="signupTitle" aria-modal="true">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('signup')" aria-label="Close"><i class="fas fa-times"></i></button>
+      <h2 class="modal-title" id="signupTitle">Join Renter.pk</h2>
+      <p class="modal-subtitle">Create your free account today</p>
+      <form onsubmit="handleSignup(event)">
+        <div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-input" placeholder="Your full name" required></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="you@example.com" required></div>
+        <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" class="form-input" placeholder="+92 300 1234567" required></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" placeholder="Create a strong password" required></div>
+        <div class="form-checkbox"><input type="checkbox" id="terms" required><label for="terms">I agree to the <a href="#" onclick="switchModal('signup',''); showPage('terms')">Terms & Conditions</a></label></div>
+        <button type="submit" class="form-btn"><span>Create Account</span><i class="fas fa-user-plus"></i></button>
+        <p class="modal-footer-text">Already have an account? <a href="#" onclick="switchModal('signup','login')">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================================================
+       COOKIE CONSENT
+  ================================================ -->
+  <div id="cookieConsent" class="cookie-consent" role="banner">
+    <div class="cookie-content">
+      <div class="cookie-icon"><i class="fas fa-cookie-bite"></i></div>
+      <div class="cookie-text">
+        <h4>We Value Your Privacy</h4>
+        <p>We use cookies to enhance your experience. By clicking "Accept", you consent to our use of cookies as described in our <a href="#" onclick="showPage('cookies')" style="color:var(--wine);text-decoration:underline;">Cookies Policy</a>.</p>
+      </div>
+      <div class="cookie-actions">
+        <button onclick="acceptCookies()" class="cookie-btn cookie-btn-accept">Accept All</button>
+        <button onclick="declineCookies()" class="cookie-btn cookie-btn-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript (deferred for performance) -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
